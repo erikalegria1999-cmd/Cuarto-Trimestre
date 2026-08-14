@@ -74,7 +74,15 @@ drop check cursos_ck_1;
 desc cursos;
 
 
+ALTER TABLE cursos
+CHANGE COLUMN horas TotalHoras INT NOT NULL DEFAULT 60;
 
+desc cursos;
+
+show tables;
+
+describe cursos;
+desc alumnos;
 
 
 
