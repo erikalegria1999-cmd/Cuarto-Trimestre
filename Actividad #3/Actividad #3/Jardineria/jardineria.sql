@@ -927,31 +927,8 @@ INSERT INTO pago VALUES (28,'PayPal','ak-std-000022','2009-01-13',8489);
 INSERT INTO pago VALUES (30,'PayPal','ak-std-000024','2009-01-16',7863);
 INSERT INTO pago VALUES (35,'PayPal','ak-std-000025','2007-10-06',3321);
 INSERT INTO pago VALUES (38,'PayPal','ak-std-000026','2006-05-26',1171);
-#1 Devuelve un listado con el código de oficina y la ciudad donde hay oficinas.
-select ciudad from oficina;
-#2 Devuelve un listado con la ciudad y el teléfono de las oficinas de España.
-select ciudad , telefono from oficina where pais = "españa" ;
-#3 Devuelve un listado con el nombre, apellidos y email de los empleados 
-#cuyo jefe tiene un código de jefe igual a 7.
-select nombre, apellido1, apellido2 ,email from empleado where codigo_jefe = "7";
-#4 Devuelve el nombre del puesto, nombre, apellidos y email del jefe de la empresa.
-select puesto , nombre ,apellido1, apellido2, email from empleado where puesto = "Director general" ;
-#5 Devuelve un listado con el nombre, apellidos y puesto de aquellos empleados que no sean representantes de ventas.
-select nombre, apellido1,apellido2, puesto from empleado where puesto != "representante ventas";
-#6 Devuelve un listado con el nombre de los todos los clientes españoles.
-select nombre_contacto from cliente where pais = "spain";
-#7 Devuelve un listado con los distintos estados por los que puede pasar un pedido.
-select distinct(estado) from pedido;
-#8 Devuelve un listado con el código de cliente de aquellos clientes que realizaron algún pago en 2008.
-# Tenga en cuenta que deberá eliminar aquellos códigos de cliente que aparezcan repetidos. Resuelva la consulta:
-# Utilizando la función YEAR de MySQL.
-select distinct codigo_cliente
-from pago
-where year(fecha_pago) = 2008;
-# Utilizando la función DATE_FORMAT de MySQL.
-select  distinct codigo_cliente
-from pago
-where date_format(fecha_pago, '%Y') = '2008';
-# Sin utilizar ninguna de las funciones anteriores.
-select distinct(codigo_cliente) from pago where fecha_pago between "2008-01-01" and "2008-12-31";
+
+
+
+
 
