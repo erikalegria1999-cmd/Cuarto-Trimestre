@@ -96,5 +96,16 @@ inner join pedido p
     on c.codigo_cliente = p.codigo_cliente
 where p.fecha_entrega > p.fecha_esperada;
 #11 Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente.
+select distinct
+    c.nombre_cliente,
+    pr.gama
+from cliente c
+inner join pedido p
+    on c.codigo_cliente = p.codigo_cliente
+inner join detalle_pedido dp
+    on p.codigo_pedido = dp.codigo_pedido
+inner join producto pr
+    on dp.codigo_producto = pr.codigo_producto
+order by c.nombre_cliente;
 	
     
